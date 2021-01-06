@@ -23,9 +23,11 @@
 <li><p>change the deploy setting at the bottom of _config.yml</p>
 </li>
 </ol>
-<h3 id="Hexo-Next-theme-deploy-with-blank-page"><a href="#Hexo-Next-theme-deploy-with-blank-page" class="headerlink" title="Hexo Next theme deploy with blank page"></a>Hexo Next theme deploy with blank page</h3><p><a href="https://zenreal.github.io/posts/51517/">hexo clean in CMD</a> and deploy again.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/">How to Easily Update Node.js to the Latest Version</a><br><a href="https://ithelp.ithome.com.tw/articles/10230877">NVM NPM差別  【我可以你也可以的Node.js】第九篇 - NPM、NVM 自己的版本自己控制</a><br><a href="https://www.voidking.com/dev-hexo-theme-next/">更換主題: Hexo更换主题为Next</a>: 安裝搜尋功能、閱讀量統計<br><a href="https://kemushi54.github.io/2019/04/01/%E7%AD%86%E8%A8%98-%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84-blog%EF%BC%8CHexo-Github-%E4%B9%8B%E4%BA%8C/">筆記 打造自己的 blog，Hexo + Github 之二</a>: add tags and categories.</p>
-<h2 id="default-code"><a href="#default-code" class="headerlink" title="default code"></a>default code</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Hexo-Next-theme-deploy-with-blank-page"><a href="#Hexo-Next-theme-deploy-with-blank-page" class="headerlink" title="Hexo Next theme deploy with blank page"></a>Hexo Next theme deploy with blank page</h3><p>in CMD</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p>and deploy again. <a href="https://zenreal.github.io/posts/51517/">refer</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/">How to Easily Update Node.js to the Latest Version</a><br><a href="https://ithelp.ithome.com.tw/articles/10230877">NVM NPM差別  【我可以你也可以的Node.js】第九篇 - NPM、NVM 自己的版本自己控制</a><br><a href="https://www.voidking.com/dev-hexo-theme-next/">更換主題: Hexo更换主题为Next</a>: 安裝搜尋功能、閱讀量統計<br><a href="https://kemushi54.github.io/2019/04/01/%E7%AD%86%E8%A8%98-%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84-blog%EF%BC%8CHexo-Github-%E4%B9%8B%E4%BA%8C/">筆記 打造自己的 blog，Hexo + Github 之二</a>: add tags and categories.</p>
+<h2 id="Default-code"><a href="#Default-code" class="headerlink" title="Default code"></a>Default code</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
@@ -45,5 +47,38 @@
     <title>end_of_2020</title>
     <url>/2020/12/31/end-of-2020/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Add images to hexo posts</title>
+    <url>/2021/01/06/imgtest/</url>
+    <content><![CDATA[<img src="/2021/01/06/imgtest/PHOTOSPHERE.jpg" class="" title="光被八表">
+<a id="more"></a>
+<h2 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h2><p>in _config.yml</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Local-route"><a href="#Local-route" class="headerlink" title="Local route"></a>Local route</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new newpost</span><br></pre></td></tr></table></figure>
+<p>in _post folder two things were created: 1. the newpost.md 2. newpost folder<br>just put the images in _post/newpost folder</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![This is img <span class="built_in">test</span>](test.jpg)</span><br></pre></td></tr></table></figure>
+<p>The image will show up successfully in this article.</p>
+<div class="note info">
+            <p>For articles created before post_asset_folder: true, their img folders will not be created.</p>
+          </div>
+
+<div class="note info">
+            <p>The method</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![This is img <span class="built_in">test</span>](test.jpg)</span><br></pre></td></tr></table></figure><p>will not show the img when users are viewing the homepage.</p>
+          </div>
+
+<h2 id="Local-route-for-img-show-in-homepage"><a href="#Local-route-for-img-show-in-homepage" class="headerlink" title="Local route for img show in homepage"></a>Local route for img show in homepage</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% asset_img test.jpg This is an image %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2021/01/06/imgtest/PHOTOSPHERE.jpg" class="" title="This is an image">
+
+<h2 id="Web-img"><a href="#Web-img" class="headerlink" title="Web img"></a>Web img</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![An Imgur Image](https://i.imgur.com/OPfEeGX.gif <span class="string">&quot;gif test&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/OPfEeGX.gif" alt="An Imgur Image" title="gif test"></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a><br><a href="https://liolok.github.io/How-to-Add-Image-to-Hexo-Blog-Post/">How to Add Image to Hexo Blog Post</a></p>
+]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
   </entry>
 </search>
