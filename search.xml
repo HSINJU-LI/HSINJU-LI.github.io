@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>How to download Himawari-8 data</title>
+    <url>/2021/01/07/H8data/</url>
+    <content><![CDATA[<h2 id="What-is-Himawari-8"><a href="#What-is-Himawari-8" class="headerlink" title="What is Himawari-8"></a>What is Himawari-8</h2><p>Himawari-8 (H-8 hereafter) is a Japanese geostationary meteorological satellite, which aboard Advanced Himawari Imagers (AHIs) instrument. The sensor can acquire 16 observation bands, including three visible, three near-infrared, and 10 shortwave infrared bands, with spatial and temporal resolutions of 0.5–2 km and 10 minutes, respectively (Bessho et al. 2016). With these fine resolution, the data can monitor the fluid atmospheric activities.</p>
+<a id="more"></a>
+<p>himawari 8 <a href="http://www.data.jma.go.jp/mscweb/en/himawari89/space_segment/hsd_sample/HS_D_users_guide_en_v12.pdf">handbook</a></p>
+<p>The basic products list of H-8 can refer to JAXA Himawari Monitor <a href="https://www.eorc.jaxa.jp/ptree/userguide.html">userGuide</a>. The real time display can be found on the <a href="https://www.eorc.jaxa.jp/ptree/index.html">Online platform</a> and <a href="https://himawari8.nict.go.jp/">NICT platform</a>.</p>
+<img src="/2021/01/07/H8data/monitor.PNG" class="" title="This is an image">
+<p>Figure of ptree online platform.</p>
+<h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><h3 id="Just-images"><a href="#Just-images" class="headerlink" title="Just images"></a>Just images</h3><p><a href="https://www.ncdc.noaa.gov/gibbs/">GIBBS: Global ISCCP B1 Browse System</a><br>This is a very useful site to download GMS, GOES, Meteosat, and Himawari… satellite images from 1974 to 2021 (collection cont.).</p>
+<h3 id="Raw-data"><a href="#Raw-data" class="headerlink" title="Raw data"></a>Raw data</h3><p><a href="http://dapds00.nci.org.au/thredds/catalog/rr5/satellite/obs/himawari8/FLDK/catalog.html">NCI catelog</a></p>
+<h3 id="Ptree-system"><a href="#Ptree-system" class="headerlink" title="Ptree system"></a>Ptree system</h3><p><a href="https://www.eorc.jaxa.jp/ptree/registration_top.html">User registration</a>.<br>After registration, you will get an access to ftp link (ftp.ptree.jaxa.jp), which can browse and download single data by chrome, fileZilla or WinSCP. For the purpose of batch download, you can refer to <a href="https://dowhoiam.blogspot.com/2020/02/ftp.html">FTP 批次下載檔案</a>.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>Bessho, K., Date, K., Hayashi, M., Ikeda, A., Imai, T., Inoue, H., Kumagai, Y., Miyakawa, T., Murata, H., and Ohno, T. (2016) An introduction to himawari-8/9—japan’s new-generation geostationary meteorological satellites. Journal of the Meteorological Society of Japan. Ser. II, 94(2): 151-183.</p>
+]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>remote sensing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Build site note</title>
     <url>/2020/12/31/hello-world/</url>
     <content><![CDATA[<p>This is the very first post. 登高必自卑，行遠必自邇. Thus, I created this website to record my subtle progress. Hey, just start today! You can find rich information at <a href="https://hexo.io/">Hexo</a>. Here just show my process from 0 to 1.</p>
