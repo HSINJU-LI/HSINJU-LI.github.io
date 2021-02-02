@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>end_of_2020</title>
-    <url>/2020/12/31/end-of-2020/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>How to download Himawari-8 data</title>
     <url>/2021/01/07/H8data/</url>
     <content><![CDATA[<h2 id="What-is-Himawari-8"><a href="#What-is-Himawari-8" class="headerlink" title="What is Himawari-8"></a>What is Himawari-8</h2><p>Himawari-8 (H-8 hereafter) is a Japanese geostationary meteorological satellite, which aboard Advanced Himawari Imagers (AHIs) instrument. The sensor can acquire 16 observation bands, including three visible, three near-infrared, and 10 shortwave infrared bands, with spatial and temporal resolutions of 0.5–2 km and 10 minutes, respectively (Bessho et al. 2016). With these fine resolution, the data can monitor the fluid atmospheric activities.</p>
@@ -24,6 +19,73 @@
       </categories>
       <tags>
         <tag>remote sensing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dealing with circular variables</title>
+    <url>/2021/02/02/circular_variables/</url>
+    <content><![CDATA[<h2 id="What-is-circular-variables"><a href="#What-is-circular-variables" class="headerlink" title="What is circular variables?"></a>What is circular variables?</h2><p>Circular variables are variables with cycle characteristic, for example, direction (from 0 deg to 360 deg), time (from 0 to 23 hr, or January to December). The begining and the end of the variables are close to each other. If you analyzed these kind of data just as normal linear variables (such as temperature, slope…), the results would be unexplainable.<br>For the scientists in the field of ecology, geology, or geography, it is really common to have circular variables. However, little was discussed when it comes to the solution.</p>
+<a id="more"></a>
+<h2 id="Ways-to-handle-circular-variables"><a href="#Ways-to-handle-circular-variables" class="headerlink" title="Ways to handle circular variables"></a>Ways to handle circular variables</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><p>The most Intuitive way is to classify the circular variables, by which you can add classified variables into your linear models. Taking the direction data for example, it can be classified into 4 categories, 0 ~ 45 deg as class1, 45 ~ 90 as class2, and so on.</p>
+<h3 id="Trigonometric-function"><a href="#Trigonometric-function" class="headerlink" title="Trigonometric function"></a>Trigonometric function</h3><p>By projecting the circular variables on a unit circle, and convert them to two-dimension (x,y) variables, you can keep the cycle characteristic of the original circular variables.<br>Here taking day of the year from 1 to 365 as an example:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">doy_test&lt;-c(1:365)</span><br><span class="line">de_doy&lt;-360*doy_test/length(doy_test) <span class="comment">#projecting to unit circle and show as angle (deg).</span></span><br><span class="line">plot(sin(de_doy),cos(de_doy))</span><br></pre></td></tr></table></figure>
+<p><img src="unitcir.PNG" alt="Unit circle"><br>The sin(de_doy), and cos(de_doy) are two new variables to represent doy_test.</p>
+<h2 id="Circular-statistics"><a href="#Circular-statistics" class="headerlink" title="Circular statistics"></a>Circular statistics</h2><p>If further compute of circular variable mean and variance are needed, (Pewsey 2013) is worth reading. This book also cover many regression models to estimated circular variables.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://stats.stackexchange.com/questions/148380/use-of-circular-predictors-in-linear-regression">Use of circular predictors in linear regression</a><br>Pewsey, A., Neuhäuser, M., &amp; Ruxton, G. D. (2013). Circular statistics in R. Oxford University Press.</p>
+]]></content>
+      <categories>
+        <category>R</category>
+      </categories>
+      <tags>
+        <tag>statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>end_of_2020</title>
+    <url>/2020/12/31/end-of-2020/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Build site note</title>
+    <url>/2020/12/31/hello-world/</url>
+    <content><![CDATA[<p>This is the very first post. 登高必自卑，行遠必自邇. Thus, I created this website to record my subtle progress. Hey, just start today! You can find rich information at <a href="https://hexo.io/">Hexo</a>. Here just show my process from 0 to 1.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Reading-these-two-articles"><a href="#Reading-these-two-articles" class="headerlink" title="Reading these two articles"></a>Reading these two articles</h3><p> <a href="https://minglun-wu.medium.com/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-%E7%A8%8B%E5%BC%8F-%E9%83%A8%E8%90%BD%E6%A0%BC-4d295ed96236">大架構: 建立一個屬於自己的(程式)部落格！</a><br> <a href="https://ithelp.ithome.com.tw/articles/10242893">(11) 試著學 Hexo - 部署你的第一個部落格</a></p>
+<h3 id="NVM-NODE"><a href="#NVM-NODE" class="headerlink" title="NVM, NODE"></a>NVM, NODE</h3><ol>
+<li><p><a href="https://github.com/coreybutler/nvm-windows/releases">install nvm window</a> then copy env URL to PATH.</p>
+</li>
+<li><p>Open CMD: nvm install latest #(remove old version first)</p>
+</li>
+<li><p>install latest node.js <a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+</li>
+</ol>
+<p>Now both nvm, npm can run in CMD</p>
+<h3 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h3><p>You may encounter: ERROR Deployer not found: git<br>solve: cd to blog fold, run: npm install hexo-deployer-git –save  <a href="https://blog.csdn.net/qq_21808961/article/details/84476504">refer</a></p>
+<h3 id="code-need-to-change"><a href="#code-need-to-change" class="headerlink" title="code need to change"></a>code need to change</h3><p>_config.yml檔案中設定說明<a href="https://hexo.io/zh-tw/docs/configuration">refer</a></p>
+<ol>
+<li><p><a href="https://github.com/HSINJU-LI/HSINJU-LI.github.io">change _config.yml URL of ~line 16 to your github link</a></p>
+</li>
+<li><p>change the deploy setting at the bottom of _config.yml.<br>The setting details refer to the first two articles mentioned above.</p>
+</li>
+</ol>
+<h3 id="Hexo-Next-theme-deploy-with-blank-page"><a href="#Hexo-Next-theme-deploy-with-blank-page" class="headerlink" title="Hexo Next theme deploy with blank page"></a>Hexo Next theme deploy with blank page</h3><p>in CMD</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p>and deploy again. <a href="https://zenreal.github.io/posts/51517/">refer</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/">How to Easily Update Node.js to the Latest Version</a><br><a href="https://ithelp.ithome.com.tw/articles/10230877">NVM NPM差別  【我可以你也可以的Node.js】第九篇 - NPM、NVM 自己的版本自己控制</a><br><a href="https://www.voidking.com/dev-hexo-theme-next/">更換主題: Hexo更换主题为Next</a>: 安裝搜尋功能、閱讀量統計<br><a href="https://kemushi54.github.io/2019/04/01/%E7%AD%86%E8%A8%98-%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84-blog%EF%BC%8CHexo-Github-%E4%B9%8B%E4%BA%8C/">筆記 打造自己的 blog，Hexo + Github 之二</a>: add tags and categories.</p>
+<h2 id="Default-code"><a href="#Default-code" class="headerlink" title="Default code"></a>Default code</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -79,49 +141,6 @@
 <h2 id="Web-img"><a href="#Web-img" class="headerlink" title="Web img"></a>Web img</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![An Imgur Image](https://i.imgur.com/OPfEeGX.gif <span class="string">&quot;gif test&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.imgur.com/OPfEeGX.gif" alt="An Imgur Image" title="gif test"></p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a><br><a href="https://liolok.github.io/How-to-Add-Image-to-Hexo-Blog-Post/">How to Add Image to Hexo Blog Post</a></p>
-]]></content>
-      <categories>
-        <category>tech</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Build site note</title>
-    <url>/2020/12/31/hello-world/</url>
-    <content><![CDATA[<p>This is the very first post. 登高必自卑，行遠必自邇. Thus, I created this website to record my subtle progress. Hey, just start today! You can find rich information at <a href="https://hexo.io/">Hexo</a>. Here just show my process from 0 to 1.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Reading-these-two-articles"><a href="#Reading-these-two-articles" class="headerlink" title="Reading these two articles"></a>Reading these two articles</h3><p> <a href="https://minglun-wu.medium.com/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-%E7%A8%8B%E5%BC%8F-%E9%83%A8%E8%90%BD%E6%A0%BC-4d295ed96236">大架構: 建立一個屬於自己的(程式)部落格！</a><br> <a href="https://ithelp.ithome.com.tw/articles/10242893">(11) 試著學 Hexo - 部署你的第一個部落格</a></p>
-<h3 id="NVM-NODE"><a href="#NVM-NODE" class="headerlink" title="NVM, NODE"></a>NVM, NODE</h3><ol>
-<li><p><a href="https://github.com/coreybutler/nvm-windows/releases">install nvm window</a> then copy env URL to PATH.</p>
-</li>
-<li><p>Open CMD: nvm install latest #(remove old version first)</p>
-</li>
-<li><p>install latest node.js <a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-</li>
-</ol>
-<p>Now both nvm, npm can run in CMD</p>
-<h3 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h3><p>You may encounter: ERROR Deployer not found: git<br>solve: cd to blog fold, run: npm install hexo-deployer-git –save  <a href="https://blog.csdn.net/qq_21808961/article/details/84476504">refer</a></p>
-<h3 id="code-need-to-change"><a href="#code-need-to-change" class="headerlink" title="code need to change"></a>code need to change</h3><p>_config.yml檔案中設定說明<a href="https://hexo.io/zh-tw/docs/configuration">refer</a></p>
-<ol>
-<li><p><a href="https://github.com/HSINJU-LI/HSINJU-LI.github.io">change _config.yml URL of ~line 16 to your github link</a></p>
-</li>
-<li><p>change the deploy setting at the bottom of _config.yml.<br>The setting details refer to the first two articles mentioned above.</p>
-</li>
-</ol>
-<h3 id="Hexo-Next-theme-deploy-with-blank-page"><a href="#Hexo-Next-theme-deploy-with-blank-page" class="headerlink" title="Hexo Next theme deploy with blank page"></a>Hexo Next theme deploy with blank page</h3><p>in CMD</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>and deploy again. <a href="https://zenreal.github.io/posts/51517/">refer</a></p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/">How to Easily Update Node.js to the Latest Version</a><br><a href="https://ithelp.ithome.com.tw/articles/10230877">NVM NPM差別  【我可以你也可以的Node.js】第九篇 - NPM、NVM 自己的版本自己控制</a><br><a href="https://www.voidking.com/dev-hexo-theme-next/">更換主題: Hexo更换主题为Next</a>: 安裝搜尋功能、閱讀量統計<br><a href="https://kemushi54.github.io/2019/04/01/%E7%AD%86%E8%A8%98-%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84-blog%EF%BC%8CHexo-Github-%E4%B9%8B%E4%BA%8C/">筆記 打造自己的 blog，Hexo + Github 之二</a>: add tags and categories.</p>
-<h2 id="Default-code"><a href="#Default-code" class="headerlink" title="Default code"></a>Default code</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
         <category>tech</category>
