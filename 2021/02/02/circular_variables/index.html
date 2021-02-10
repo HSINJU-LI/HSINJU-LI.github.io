@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://github.com/HSINJU-LI/HSINJU-LI.github.io/2021/02/02/circular_variables/unitcir.PNG">
 <meta property="article:published_time" content="2021-02-02T13:11:20.000Z">
-<meta property="article:modified_time" content="2021-02-02T13:55:56.078Z">
+<meta property="article:modified_time" content="2021-02-10T10:58:45.635Z">
 <meta property="article:author" content="Hsin-Ju Li">
 <meta property="article:tag" content="statistics">
 <meta name="twitter:card" content="summary">
@@ -220,10 +220,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-02-02 21:11:20 / 修改時間：21:55:56" itemprop="dateCreated datePublished" datetime="2021-02-02T21:11:20+08:00">2021-02-02</time>
+              <time title="創建時間：2021-02-02 21:11:20" itemprop="dateCreated datePublished" datetime="2021-02-02T21:11:20+08:00">2021-02-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-02-10 18:58:45" itemprop="dateModified" datetime="2021-02-10T18:58:45+08:00">2021-02-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -258,7 +264,7 @@
 <h3 id="Trigonometric-function"><a href="#Trigonometric-function" class="headerlink" title="Trigonometric function"></a>Trigonometric function</h3><p>By projecting the circular variables on a unit circle, and convert them to two-dimension (x,y) variables, you can keep the cycle characteristic of the original circular variables.<br>Here taking day of the year from 1 to 365 as an example:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">doy_test&lt;-c(1:365)</span><br><span class="line">de_doy&lt;-360*doy_test/length(doy_test) <span class="comment">#projecting to unit circle and show as angle (deg).</span></span><br><span class="line">plot(sin(de_doy),cos(de_doy))</span><br></pre></td></tr></table></figure>
 <p><img src="unitcir.PNG" alt="Unit circle"><br>The sin(de_doy), and cos(de_doy) are two new variables to represent doy_test.</p>
-<h2 id="Circular-statistics"><a href="#Circular-statistics" class="headerlink" title="Circular statistics"></a>Circular statistics</h2><p>If further compute of circular variable mean and variance are needed, (Pewsey 2013) is worth reading. This book also cover many regression models to estimated circular variables.</p>
+<h2 id="Circular-statistics"><a href="#Circular-statistics" class="headerlink" title="Circular statistics"></a>Circular statistics</h2><p>If further compute of circular variable mean and variance are needed, (Pewsey et al. 2013) is worth reading. This book also cover many regression models to estimated circular variables.<br>In addition, <a target="_blank" rel="noopener" href="https://bigdata.duke.edu/sites/bigdata.duke.edu/files/site-images/FullLesson.html">Answering biological questions using circular data and analysis in R</a>, this article provided detailed R code with computing Rayleigh Test and Watson Test for circular data.</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://stats.stackexchange.com/questions/148380/use-of-circular-predictors-in-linear-regression">Use of circular predictors in linear regression</a><br>Pewsey, A., Neuhäuser, M., &amp; Ruxton, G. D. (2013). Circular statistics in R. Oxford University Press.</p>
 
     </div>
